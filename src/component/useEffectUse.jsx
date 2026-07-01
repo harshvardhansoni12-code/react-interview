@@ -19,7 +19,7 @@ set timer function setTimeout, setInterval
   const [count, setCount] = useState(0);
   useEffect(() => {
     console.log("useEffect called");
-  }, []);
+  }, [count]);
   return (
     <>
       <div>Side Effect Component</div>
