@@ -17,19 +17,23 @@ set timer function setTimeout, setInterval
   // empty dep array :- use effect will run only on mount
   // dep array with state :- use effect will run only when the state changes
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    console.log("useEffect called");
-  }, [count]);
+  UseEffect(
+    setTimeout(() => {
+      setCount(count + 1);
+    }, 1000),
+    [],
+  );
+
   return (
     <>
       <div>Side Effect Component</div>
-      <button
+      {/* <button
         onClick={() => {
           setCount(count + 1);
         }}
-      >
-        <div>this is count: {count}</div>
-      </button>
+      > */}
+      <div>this is count: {count}</div>
+      {/* </button> */}
     </>
   );
 };
