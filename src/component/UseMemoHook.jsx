@@ -17,20 +17,29 @@ import React, { useState, useMemo } from "react";
 
 export default function MemoHook() {
   const [count, setCount] = useState(0);
+  const [number, setNumber] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
-
+  //
+  function cubeNum(num) {
+    console.log("Calculating cube of number");
+    return Math.pow(num, 3);
+  }
+  //
+  const result = cubeNum(number);
   return (
     <>
-      <div>{count}</div>
-      <button
-        onClick={() => {
-          increment();
-        }}
-      >
-        increment
-      </button>
+      <div>Memo Hook Component</div>
+      <input
+        type="number"
+        placeholder="Enter a number"
+        onChange={(e) => setNumber(Number(e.target.value))}
+      />
+      <div>cube of number:{result}</div>
+
+      <button onClick={increment}>Counter++</button>
+      <div>Counter:{count}</div>
     </>
   );
 }
