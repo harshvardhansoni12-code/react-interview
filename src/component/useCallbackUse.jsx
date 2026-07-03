@@ -1,7 +1,14 @@
-import Reacr from "react";
+import React from "react";
 
-const Header = () => {
-  return <></>;
+const Header = ({ newFn }) => {
+  console.log("Header component rendered");
+  return (
+    <>
+      <div>
+        <h1>Header Component</h1>
+      </div>
+    </>
+  );
 };
 
-export default Header;
+export default React.memo(Header);
